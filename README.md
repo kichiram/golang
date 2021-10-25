@@ -57,7 +57,7 @@ Hello World
 先ほどと同様にHello Worldと表示されていれば成功です。
 #### 5. 動作確認パート２
 ##### 5.1. 動作確認用のプログラム準備
-今度はHello Worldをブラウザで表示させるプログラムを作成します。
+今度はHello Worldをブラウザで表示させるプログラムを準備します。
 ```
 $ cd ~/testgo
 $ wget https://raw.githubusercontent.com/kichiram/golang/main/testgo/hello_http.go
