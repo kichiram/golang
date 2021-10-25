@@ -29,17 +29,12 @@ $ source ~/.bash_profile
 $ echo $GOPATH
 /home/ec2-user/go
 ```
-#### 3. 動作確認用のプログラム作成
+#### 3. 動作確認用のプログラム準備
 ```
-$ mkdir -p $HOME/testgo;cd $HOME/testgo
-$ vi hello.go
-package main
-  
-import "fmt"
-
-func main() {
-    fmt.Printf("Hello World\n")
-}
+$ mkdir -p ~/testgo; cd ~/testgo
+$ wget https://raw.githubusercontent.com/kichiram/golang/main/testgo/hello.go
+$ ls hello.go
+hello.go
 ```
 #### 4. 動作確認
 ##### 4.1. go runで実行してみます。
@@ -60,3 +55,29 @@ $ ./hello
 Hello World
 ```
 先ほどと同様にHello Worldと表示されていれば成功です。
+#### 5. 動作確認パート２
+##### 5.1. 動作確認用のプログラム準備
+今度はHello Worldをブラウザで表示させるプログラムを作成します。
+```
+$ cd ~/testgo
+$ wget https://raw.githubusercontent.com/kichiram/golang/main/testgo/hello_http.go
+$ ls hello_http.go 
+hello_http.go
+```
+##### 5.2. ビルドして実行ファイル（バイナリ）を作成します。
+```
+$ go build hello_http.go 
+$ ls hello_http
+hello_http
+```
+##### 5.3. 実行ファイル（バイナリ）を実行してみます。
+```
+$ ./hello_http
+```
+##### 5.4. ブラウザでアクセスできるか確認します。
+```
+http://<ホスト名>:8080
+```
+Hello Worldと表示されていれば成功です。
+##### 5.5. 実行中を中断します。
+EC2のインスタンスに戻りCTRL-Cで実行を中断します。
