@@ -3,6 +3,7 @@ package main
 import (
   "fmt"
   "net/http"
+  "time"
   "log"
   "github.com/prometheus/client_golang/prometheus"
   "github.com/prometheus/client_golang/prometheus/promauto"
@@ -51,5 +52,5 @@ func main() {
   }()
 
   mux2.Handle("/metrics", promhttp.Handler())
-  srv2.ListenAndServe(":8081", nil)
+  srv2.ListenAndServe()
 }
