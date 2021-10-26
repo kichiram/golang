@@ -13,7 +13,7 @@ import (
 var (
   testMetrics = promauto.NewCounterVec(
     prometheus.CounterOpts{
-      Name: "testgo_metrics",
+      Name: "http_request_count_total",
       Help: "Test Counter",
     },
     []string{"testlabel"},
