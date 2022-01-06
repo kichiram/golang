@@ -31,7 +31,7 @@ func newServer(addr string) (*http.ServeMux, *http.Server) {
 
 func handler1(w http.ResponseWriter, r *http.Request) {
   fmt.Fprintf(w, "Hello")
-  log.Print("Hello!\n")
+  log.Print("Hello! " + r.FormValue("name") + "\n")
   testMetrics.With(prometheus.Labels{"testlabel": "Hello"}).Inc()
 }
 
