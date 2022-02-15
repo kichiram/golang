@@ -3,7 +3,7 @@ EC2のインスタンス上で実施します。
 #### 1. インストール
 ##### 1.1. yumコマンドでインストールします。
 ```
-$ $ sudo yum install golang -y
+$ sudo yum install golang -y
 --- 省略 ---
 Installed:
   golang.x86_64 0:1.15.14-1.amzn2.0.1 
